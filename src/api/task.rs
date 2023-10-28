@@ -19,6 +19,6 @@ pub struct TaskIdentifier {
 }
 
 #[get("/task/{task_global_id}")]
-pub async fn get_task(task_identifier: Path<TaskIdentifier>, body: Json<Struct>) -> Json<String> {
-    Json("Hello, from get task".to_owned()) 
+pub async fn get_task(task_identifier: Path<TaskIdentifier>, body: Json<String>) -> Json<String> {
+    Json("Hello, from get task".to_owned())
 }
