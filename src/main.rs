@@ -1,5 +1,6 @@
-mod api;
-use api::task::get_task;
+mod routes;
+use routes::auth::auth_routes_handler;
+use routes::ledger::get_task;
 
 use actix_web::{
     middleware::Logger,
@@ -16,7 +17,11 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .service(web::resource("/").to(index))
+            .service(web::resource("/notification").to(index))
+            .service(web::resource("/auth").to(index))
+            .service(web::resource("/chat").to(index))
             .service(web::resource("/users/{username}").to(user_info))
+            .service(auth_routes_handler())
             .service(get_task)
     })
     .bind(("127.0.0.1", 8080))?
