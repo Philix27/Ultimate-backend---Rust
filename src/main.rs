@@ -1,6 +1,11 @@
 mod routes;
-use routes::auth::auth_routes_handler;
 use routes::ledger::get_task;
+use routes::organization::org_routes_handler;
+use routes::payments::payment_routes_handler;
+use routes::transactions::transactions_routes_handler;
+use routes::user::user_routes_handler;
+use routes::utils::utils_routes_handler;
+use routes::{auth::auth_routes_handler, notification::notification_routes_handler};
 
 use actix_web::{
     middleware::Logger,
@@ -17,12 +22,13 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .service(web::resource("/").to(index))
-            .service(web::resource("/notification").to(index))
-            .service(web::resource("/auth").to(index))
-            .service(web::resource("/chat").to(index))
-            .service(web::resource("/users/{username}").to(user_info))
+            .service(user_routes_handler())
+            .service(transactions_routes_handler())
+            .service(payment_routes_handler())
+            .service(notification_routes_handler())
+            .service(org_routes_handler())
             .service(auth_routes_handler())
-            .service(get_task)
+            .service(utils_routes_handler())
     })
     .bind(("127.0.0.1", 8080))?
     .run()
