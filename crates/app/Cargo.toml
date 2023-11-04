@@ -1,6 +1,9 @@
 [package]
-name = "service_gateway"
+name = "AppGateway"
 version = "0.1.0"
+authors = ["Eligbue Felix <philixbob.com>"]
+description = "A rust backend setup for startups"
+readme = "README.md"
 edition.workspace = true
 license.workspace = true
 

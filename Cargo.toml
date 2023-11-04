@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["./crates/service_gateway"]
+members = ["./crates/*"]
 package.edition = "2021"
 package.license = "Apache-2.0"
 
