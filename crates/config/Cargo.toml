@@ -1,5 +1,5 @@
 [package]
-name = "AppConfig"
+name = "service_config"
 version = "0.1.0"
 edition.workspace = true
 license.workspace = true
@@ -7,25 +7,25 @@ authors = ["Eligbue Felix <philixbob.com>"]
 description = "A rust backend setup for startups"
 readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true }
 log = { workspace = true }
-dotenvy = "0.15"
-econf = "0.2.1"
-notify = "6.0"
+dotenvy = { workspace = true }
+econf = { workspace = true }
+notify = { workspace = true }
 json_dotpath = "1.1"
 convert_case = "0.6"
 async-trait = { version = "0.1" }
-
 tokio = { workspace = true, optional = true, features = ["fs", "io-util"] }
 async-std = { version = "1.12", optional = true }
-
 serde_yaml = { workspace = true, optional = true }
 ron = { version ="0.8", optional = true }
 toml = { version = "0.7", optional = true }
+futures = {version= "0.3.28", features = ["async-await"], default-features = false}
+rdkafka = {workspace = true}
+kafka = {workspace = true}
 
 
 [dev-dependencies]

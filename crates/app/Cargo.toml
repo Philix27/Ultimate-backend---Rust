@@ -1,5 +1,5 @@
 [package]
-name = "AppGateway"
+name = "service_gateway"
 version = "0.1.0"
 authors = ["Eligbue Felix <philixbob.com>"]
 description = "A rust backend setup for startups"
