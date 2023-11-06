@@ -10,13 +10,14 @@ mod texts;
 
 use my_consumer::MyConsumer;
 use my_producer::MyProducer;
+use service_messenger::queue::consumer::AppConsumer;
 use texts::Texts;
 
 fn main() {
     let hosts = vec!["localhost:9092".to_string()];
 
     let mut texts = Texts::new();
-    let mut consumer = MyConsumer::new(hosts.clone(), "actions".to_string());
+    let mut consumer = AppConsumer::new(hosts.clone(), "actions".to_string());
     let mut producer = MyProducer::new(hosts);
     // put here to show that the microservice has started
     println!("Started...");

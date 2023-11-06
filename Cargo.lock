@@ -1841,10 +1841,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "service_auth"
-version = "0.1.0"
-
-[[package]]
 name = "service_config"
 version = "0.1.0"
 dependencies = [
@@ -1874,7 +1870,14 @@ name = "service_gateway"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "futures",
+ "kafka",
+ "rdkafka",
  "serde",
+ "serde_json",
+ "service_config",
+ "service_messenger",
+ "tokio",
 ]
 
 [[package]]
@@ -1886,6 +1889,18 @@ name = "service_log"
 version = "0.1.0"
 
 [[package]]
+name = "service_messenger"
+version = "0.1.0"
+dependencies = [
+ "futures",
+ "kafka",
+ "rdkafka",
+ "serde",
+ "serde_json",
+ "service_config",
+]
+
+[[package]]
 name = "service_notify"
 version = "0.1.0"
 dependencies = [
@@ -1893,15 +1908,13 @@ dependencies = [
  "kafka",
  "rdkafka",
  "serde_json",
+ "service_config",
+ "service_messenger",
  "tokio",
 ]
 
 [[package]]
 name = "service_payment"
-version = "0.1.0"
-
-[[package]]
-name = "service_proto"
 version = "0.1.0"
 
 [[package]]

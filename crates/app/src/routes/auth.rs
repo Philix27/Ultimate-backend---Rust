@@ -10,6 +10,6 @@ async fn send_phone_otp() -> &'static str {
 
 pub fn auth_routes_handler() -> actix_web::Scope {
     web::scope("/auth")
-        .route("/auth", web::get().to(send_email_otp))
-        .route("/auth/{user_id}", web::patch().to(send_phone_otp))
+        .route("/", web::get().to(send_email_otp))
+        .route("/{user_id}", web::patch().to(send_phone_otp))
 }

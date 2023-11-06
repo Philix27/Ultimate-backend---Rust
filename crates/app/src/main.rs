@@ -1,5 +1,6 @@
 mod routes;
-use routes::ledger::get_task;
+
+use actix_web::web;
 use routes::organization::org_routes_handler;
 use routes::payments::payment_routes_handler;
 use routes::transactions::transactions_routes_handler;
@@ -7,11 +8,8 @@ use routes::user::user_routes_handler;
 use routes::utils::utils_routes_handler;
 use routes::{auth::auth_routes_handler, notification::notification_routes_handler};
 
-use actix_web::{
-    middleware::Logger,
-    web::{self, Data},
-    App, HttpResponse, HttpServer, Responder,
-};
+use actix_web::{middleware::Logger, App, HttpResponse, HttpServer, Responder};
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "debug");
@@ -22,10 +20,11 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .service(web::resource("/").to(index))
+            .service(web::resource("/notify").to(notify))
+            .service(notification_routes_handler())
             .service(user_routes_handler())
             .service(transactions_routes_handler())
             .service(payment_routes_handler())
-            .service(notification_routes_handler())
             .service(org_routes_handler())
             .service(auth_routes_handler())
             .service(utils_routes_handler())
@@ -36,10 +35,8 @@ async fn main() -> std::io::Result<()> {
 }
 
 async fn index() -> impl Responder {
-    HttpResponse::Ok().body("Hello, World!")
+    HttpResponse::Ok().body("Hello, Actix web")
 }
-
-async fn user_info(path: web::Path<(String,)>) -> impl Responder {
-    let username = &path.0;
-    HttpResponse::Ok().body(format!("User info for: {}", username))
+async fn notify() -> impl Responder {
+    HttpResponse::Ok().body("Notifier")
 }

@@ -7,20 +7,21 @@ pub struct ThirdParties {
     pub mailchimp_key: String,
     pub mailgun_key: String,
     pub twilo_key: String,
+    pub kafka_host: Vec<String>,
 }
 
+
 impl ThirdParties {
-    pub fn getValues() -> Self {
+    pub fn get_values() -> Self {
+       
         dotenv().ok();
-
-        // Access environment variables
-
         ThirdParties {
             send_grid_key: env::var("DATABASE_URL").expect("DATABASE_URL not set in .env"),
             termii_key: env::var("DATABASE_URL").expect("DATABASE_URL not set in .env"),
             mailchimp_key: env::var("DATABASE_URL").expect("DATABASE_URL not set in .env"),
             mailgun_key: env::var("DATABASE_URL").expect("DATABASE_URL not set in .env"),
             twilo_key: env::var("DATABASE_URL").expect("DATABASE_URL not set in .env"),
+            kafka_host: vec!["localhost:9092".to_string()],
         }
     }
 }
