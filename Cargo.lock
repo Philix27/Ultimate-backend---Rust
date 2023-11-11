@@ -1904,9 +1904,11 @@ dependencies = [
 name = "service_notify"
 version = "0.1.0"
 dependencies = [
+ "actix-web",
  "futures",
  "kafka",
  "rdkafka",
+ "serde",
  "serde_json",
  "service_config",
  "service_messenger",

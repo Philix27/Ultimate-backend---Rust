@@ -1,4 +1,6 @@
 mod model;
+mod parties;
+mod utils;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right

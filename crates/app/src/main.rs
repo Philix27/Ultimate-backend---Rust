@@ -1,6 +1,7 @@
 mod routes;
 
 use actix_web::web;
+use actix_web::{middleware::Logger, App, HttpResponse, HttpServer, Responder};
 use routes::organization::org_routes_handler;
 use routes::payments::payment_routes_handler;
 use routes::transactions::transactions_routes_handler;
@@ -8,7 +9,6 @@ use routes::user::user_routes_handler;
 use routes::utils::utils_routes_handler;
 use routes::{auth::auth_routes_handler, notification::notification_routes_handler};
 
-use actix_web::{middleware::Logger, App, HttpResponse, HttpServer, Responder};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
