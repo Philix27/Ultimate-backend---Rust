@@ -12,5 +12,6 @@ serde_json = { workspace = true }
 futures = {version= "0.3.28", features = ["async-await"], default-features = false}
 rdkafka = {workspace = true}
 kafka = {workspace = true}
+tokio = {workspace = true}
 
 service_config = {workspace = true}

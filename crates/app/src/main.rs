@@ -9,7 +9,6 @@ use routes::user::user_routes_handler;
 use routes::utils::utils_routes_handler;
 use routes::{auth::auth_routes_handler, notification::notification_routes_handler};
 
-
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "debug");
@@ -19,7 +18,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(Logger::default())
-            .service(web::resource("/").to(index))
+            .route("/", web::get().to(index))
             .service(web::resource("/notify").to(notify))
             .service(notification_routes_handler())
             .service(user_routes_handler())

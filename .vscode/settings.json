@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["actix", "mailchimp", "mailgun", "termii", "twilo"]
+  "cSpell.words": [
+    "actix",
+    "mailchimp",
+    "mailgun",
+    "rdkafka",
+    "termii",
+    "twilo"
+  ]
 }
