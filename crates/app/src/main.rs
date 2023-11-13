@@ -19,7 +19,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .route("/", web::get().to(index))
-            .service(web::resource("/notify").to(notify))
+
             .service(notification_routes_handler())
             .service(user_routes_handler())
             .service(transactions_routes_handler())

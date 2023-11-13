@@ -45,8 +45,3 @@ pub fn notification_routes_handler() -> Scope {
         )
 }
 
-// fn notify_route() -> Scope {
-//     web::scope("/notify")
-//         .route("holo", web::get().to(notify))
-//         .route("men", web::get().to(notify_men))
-// }
