@@ -1,4 +1,9 @@
+pub mod channel;
+pub mod chat;
+pub mod epic;
 pub mod ledger;
 pub mod notification;
 pub mod payment;
+pub mod story;
+pub mod tasks;
 pub mod user;
