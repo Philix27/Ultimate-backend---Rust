@@ -1,15 +1,15 @@
 use std::time::Duration;
 
-pub struct Tasks {
+pub struct Story {
     title: String,
     start_date: Duration,
     due_date: Option<Duration>,
 }
 
-impl Tasks {
+impl Story {
     pub fn new(title: String, start_date: Duration, due_date: Option<Duration>) -> Self {
         todo!("Generate start date if not available to date of creation");
-        Tasks {
+        Story {
             title,
             start_date,
             due_date,
@@ -19,5 +19,4 @@ impl Tasks {
     pub fn assign() {}
     pub fn delete() {}
     pub fn update() {}
-    pub fn add_comment() {}
 }

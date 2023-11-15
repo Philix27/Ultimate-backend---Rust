@@ -9,7 +9,7 @@ pub enum AppKafkaTopics {
     CompressImage,
     CompressVideo,
 }
-pub struct AppProducer {}
+pub struct AppProducer;
 
 impl AppProducer {
     pub fn new() -> FutureProducer {
