@@ -28,6 +28,8 @@ rdkafka = {workspace = true}
 kafka = {workspace = true}
 
 
+service_config = {workspace = true}
+
 [dev-dependencies]
 tokio-test = "0.4"
 envmnt = "0.10.4"

@@ -47,12 +47,7 @@ notify = "6.0"
 
 service_gateway = {version = "0.1.0", path = "./crates/app" }
 service_config = {version = "0.1.0", path = "./crates/config" }
-service_ledger = {version = "0.1.0", path = "./crates/ledger" }
-service_log = {version = "0.1.0", path = "./crates/log" }
+service_core = {version = "0.1.0", path = "./crates/core" }
 service_notify = {version = "0.1.0", path = "./crates/notify" }
-service_payment = {version = "0.1.0", path = "./crates/payment" }
-service_messenger = {version = "0.1.0", path = "./crates/messenger" }
-service_user = {version = "0.1.0", path = "./crates/user" }
-service_utils = {version = "0.1.0", path = "./crates/utils" }
 
 

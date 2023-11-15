@@ -234,14 +234,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "app_chat"
-version = "0.1.0"
-
-[[package]]
-name = "app_notes"
-version = "0.1.0"
-
-[[package]]
 name = "app_task"
 version = "0.1.0"
 
@@ -384,10 +376,6 @@ name = "atomic-waker"
 version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
-
-[[package]]
-name = "auth"
-version = "0.1.0"
 
 [[package]]
 name = "autocfg"
@@ -1933,14 +1921,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "service_ledger"
-version = "0.1.0"
-
-[[package]]
-name = "service_log"
-version = "0.1.0"
-
-[[package]]
 name = "service_messenger"
 version = "0.1.0"
 dependencies = [
@@ -1967,18 +1947,6 @@ dependencies = [
  "service_messenger",
  "tokio",
 ]
-
-[[package]]
-name = "service_payment"
-version = "0.1.0"
-
-[[package]]
-name = "service_user"
-version = "0.1.0"
-
-[[package]]
-name = "service_utils"
-version = "0.1.0"
 
 [[package]]
 name = "sha1"
