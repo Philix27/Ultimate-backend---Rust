@@ -44,6 +44,7 @@ tokio = { version = "1.24.1", features = ["full"] }
 uuid = {version = "1.4.1", features = ["v4"]}
 econf = "0.2.1"
 notify = "6.0"
+openssl = { version = "0.10", features = ["v110"] }
 
 service_gateway = {version = "0.1.0", path = "./crates/app" }
 service_config = {version = "0.1.0", path = "./crates/config" }

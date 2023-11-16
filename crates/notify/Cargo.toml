@@ -20,4 +20,3 @@ tokio = {workspace = true}
 serde_json  = {workspace = true}
 
 service_config = {workspace = true}
-service_messenger = {workspace = true}

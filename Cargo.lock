@@ -234,10 +234,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "app_task"
-version = "0.1.0"
-
-[[package]]
 name = "async-channel"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1895,6 +1891,7 @@ dependencies = [
  "kafka",
  "log",
  "notify",
+ "openssl",
  "rdkafka",
  "ron",
  "serde",
@@ -1906,24 +1903,23 @@ dependencies = [
 ]
 
 [[package]]
-name = "service_gateway"
+name = "service_core"
 version = "0.1.0"
 dependencies = [
- "actix-web",
  "futures",
  "kafka",
  "rdkafka",
  "serde",
  "serde_json",
  "service_config",
- "service_messenger",
  "tokio",
 ]
 
 [[package]]
-name = "service_messenger"
+name = "service_gateway"
 version = "0.1.0"
 dependencies = [
+ "actix-web",
  "futures",
  "kafka",
  "rdkafka",
@@ -1944,7 +1940,6 @@ dependencies = [
  "serde",
  "serde_json",
  "service_config",
- "service_messenger",
  "tokio",
 ]
 

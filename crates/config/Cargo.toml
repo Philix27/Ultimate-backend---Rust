@@ -26,9 +26,8 @@ toml = { version = "0.7", optional = true }
 futures = {version= "0.3.28", features = ["async-await"], default-features = false}
 rdkafka = {workspace = true}
 kafka = {workspace = true}
+openssl = {workspace = true}
 
-
-service_config = {workspace = true}
 
 [dev-dependencies]
 tokio-test = "0.4"
