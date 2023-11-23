@@ -4,6 +4,10 @@ pub struct Tasks {
     title: String,
     start_date: Duration,
     due_date: Option<Duration>,
+    members_id: Vec<String>,
+    labels: String,
+    created_at: Date,
+    updated_at: Date,
 }
 
 impl Tasks {
@@ -13,6 +17,10 @@ impl Tasks {
             title,
             start_date,
             due_date,
+            members_id: todo!(),
+            labels: todo!(),
+            created_at: todo!(),
+            updated_at: todo!(),
         }
     }
 

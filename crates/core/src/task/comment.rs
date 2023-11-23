@@ -1,12 +1,13 @@
 use std::time::Duration;
 
-pub struct Comment {
+pub struct TaskComment {
     user_id: String,
     msg: String,
+    task_id: string,
     created_at: Duration,
 }
 
-impl Comment {
+impl TaskComment {
     pub fn new(user_id: String, msg: String, created_at: Duration) -> Self {
         todo!("Generate start date if not available to date of creation");
         Comment {
